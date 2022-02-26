@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h> //necess·rio para usar acentuaÁ„o
+#include <locale.h> //necess√°rio para usar acentua√ß√£o
 /*Grupo:
 Uarlley do Nascimento Amorim
 Christian Jonas Oliveira
-Jo„o Victor do Roz·rio Recla
+Jo√£o Victor do Roz√°rio Recla
 Lucas de Oliveira Suanderhus*/
 void imprimir(int conjunto[100],int qnt){
 
-    //FunÁ„o que apenas imprimi os elementos de um conjunto A
+    //Fun√ß√£o que apenas imprimi os elementos de um conjunto A
     int i;
     //Imprime o conjunto de entrada
     if (qnt==0)
@@ -32,21 +32,21 @@ void imprimir(int conjunto[100],int qnt){
 }
 void inserir(int conjunto[101],int qnt,char p){
 
-    //FunÁ„o que insere um elemento dentro de um conjunto
+    //Fun√ß√£o que insere um elemento dentro de um conjunto
     int i=0,n=0;
-    //Entrada do elemento que ser· inserido no final do conjunto
+    //Entrada do elemento que ser√° inserido no final do conjunto
     printf("\nDigite o elemento que deseja inserir no conjunto %c: ",p);
     scanf("%d",&n);
-    //Insere o elemento na ultima posiÁ„o do conjunto
+    //Insere o elemento na ultima posi√ß√£o do conjunto
     conjunto[qnt]=n;
 }
 int remover(int conjunto[100],int qnt,char p){
 
-    //FunÁ„o que le e remove um elemento de um conjunto
+    //Fun√ß√£o que le e remove um elemento de um conjunto
     int i=0,n=0;
-    printf("\nDigite o elemento que deseja remover do conjunto %c: ",p);//Entrada do elemento que ser· removido do conjunto
+    printf("\nDigite o elemento que deseja remover do conjunto %c: ",p);//Entrada do elemento que ser√° removido do conjunto
     scanf("%d",&n);
-    //Processo de remoÁ„o do elemento
+    //Processo de remo√ß√£o do elemento
     for(i=0;i<qnt;i++){
         if ( qnt==0)
             break;
@@ -59,57 +59,57 @@ int remover(int conjunto[100],int qnt,char p){
             break;
         }
     }
-    //Impress„o do conjunto
+    //Impress√£o do conjunto
     printf("\n%c = ",p);
     imprimir(conjunto,qnt);
     return qnt;
 
 }
 int pertence(int conjunto[100],int qnt,char p){
-    //FunÁ„o que verifica se um elemento pertence ‡ um conjunto
+    //Fun√ß√£o que verifica se um elemento pertence √† um conjunto
     int n=0,i;
-    //Leitura do elemento que ser· avaliado
+    //Leitura do elemento que ser√° avaliado
     printf("\nDigite o elemento que deseja verificar se pertence ao conjunto %c: ",p);
     scanf("%d",&n);
-    //Processo de avaliaÁ„o
+    //Processo de avalia√ß√£o
     for(i=0;i<qnt;i++){
         if(conjunto[i]==n){
-            printf("\nO elemento %d pertence ‡ %c!\n",n,p);
+            printf("\nO elemento %d pertence √† %c!\n",n,p);
             return 0;
         }
     }
-    printf("\nO elemento %d n„o pertence ‡ %c!\n",n,p);
+    printf("\nO elemento %d n√£o pertence √† %c!\n",n,p);
     return 0;
 }
 
 int subconjunto(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,char lel,char lal){
-    //FunÁ„o que verifica se um conjunto B È subconjunto de um conjunto A
+    //Fun√ß√£o que verifica se um conjunto B √© subconjunto de um conjunto A
     int i1,i2;
-    //Repetidores que verificam se o conjunto B pertence ‡ A
+    //Repetidores que verificam se o conjunto B pertence √† A
     for(i1=0;i1<qnt1;i1++){
         for(i2=0;i2<qnt2;i2++){
             if (conjunto1[i1]==conjunto2[i2])
                 break;
             else if((i2+1==qnt2) && (conjunto1[i1]!=conjunto2[i2+1]) ){
-                printf("\n%c n„o È subconjunto de %c\n!",lel,lal);
+                printf("\n%c n√£o √© subconjunto de %c\n!",lel,lal);
                 return 0;
             }
         }
 
     }
-    printf("\n%c È subconjunto de %c\n!",lel,lal);
+    printf("\n%c √© subconjunto de %c\n!",lel,lal);
 
 }
 
 void uniao(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,char lel,char lal){
-    //FunÁ„o que realiza a uni„o de um conjunto A e um conjunto B
+    //Fun√ß√£o que realiza a uni√£o de um conjunto A e um conjunto B
     int conjunto3[200],qnt3=0,i1,i2,i3=0;
     if (qnt1>=qnt2){
-    //O conjunto resultante ja È preenchido com os elementos do conjunto com maior tamanho
+    //O conjunto resultante ja √© preenchido com os elementos do conjunto com maior tamanho
         for(i3=0;i3<qnt1;i3++){
             conjunto3[i3]=conjunto1[i3];
         }
-    //Bastando apenas colocar apenas os elementos que est„o no menor tamanho no maior
+    //Bastando apenas colocar apenas os elementos que est√£o no menor tamanho no maior
         for(i2=0;i2<qnt2;i2++){
             for(i3=0;i3<qnt1;i3++){
                 if(i3+1==qnt1){
@@ -127,11 +127,11 @@ void uniao(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,char lel,char
         qnt3=qnt1;
     }
     else if (qnt2>qnt1){
-        //O conjunto resultante ja È preenchido com os elementos do conjunto com maior tamanho
+        //O conjunto resultante ja √© preenchido com os elementos do conjunto com maior tamanho
         for(i3=0;i3<qnt2;i3++){
             conjunto3[i3]=conjunto2[i3];
         }
-        //Bastando apenas colocar apenas os elementos que est„o no menor tamanho no maior
+        //Bastando apenas colocar apenas os elementos que est√£o no menor tamanho no maior
         for(i1=0;i1<qnt1;i1++){
             for(i3=0;i3<qnt2;i3++){
                 if(i3+1==qnt2){
@@ -148,16 +148,16 @@ void uniao(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,char lel,char
         }
         qnt3=qnt2;
     }
-    //Impress„o do conjunto resultante
-    printf("A uni„o entre %c e %c È: ",lel,lal);
+    //Impress√£o do conjunto resultante
+    printf("A uni√£o entre %c e %c √©: ",lel,lal);
     imprimir(conjunto3,qnt3);
 }
 
 void intersecao(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,char lal,char lel){
-    //FunÁ„o que realiza a interseÁ„o entre um conjunto A e um conjunto B
+    //Fun√ß√£o que realiza a interse√ß√£o entre um conjunto A e um conjunto B
     int conjunto3[100],qnt3=0,i1,i2,i3=0;
 
-    //O conjunto resultante receber· apenas os elementos que pertencem ‡ A e B
+    //O conjunto resultante receber√° apenas os elementos que pertencem √† A e B
     for(i1=0;i1<qnt1;i1++){
         for(i2=0;i2<qnt2;i2++){
             if(conjunto1[i1]==conjunto2[i2]){
@@ -168,22 +168,22 @@ void intersecao(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,char lal
             }
         }
     }
-    //Impress„o do conjunto resultante
-    printf("\nA interseÁ„o entre %c e %c È: ",lal,lel);
+    //Impress√£o do conjunto resultante
+    printf("\nA interse√ß√£o entre %c e %c √©: ",lal,lel);
     imprimir(conjunto3,qnt3);
 
 }
 
 void subtracao(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,char lal, char lel){
-    //FunÁ„o que realiza a operaÁ„o A - B
+    //Fun√ß√£o que realiza a opera√ß√£o A - B
     int conjunto3[100],qnt3=0,i1,i2,i3=0;
-    //Realiza a comparaÁ„o entre os elementos de A e B
+    //Realiza a compara√ß√£o entre os elementos de A e B
     for(i1=0;i1<qnt1;i1++){
         for(i2=0;i2<qnt2;i2++){
             if(conjunto1[i1]==conjunto2[i2])
                 break;
             else if((conjunto1[i1]!=conjunto2[i2]) && (i2+1==qnt2)){
-                //Caso um elemento n pertenÁa ‡ A e n„o pertenÁa ‡ B, ele entra no conjunto resultante
+                //Caso um elemento n perten√ßa √† A e n√£o perten√ßa √† B, ele entra no conjunto resultante
                 conjunto3[i3]=conjunto1[i1];
                 i3++;
                 qnt3++;
@@ -197,7 +197,7 @@ void subtracao(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,char lal,
             conjunto3[i3]=conjunto1[i3];
         }
     }
-    //Impress„o do conjunto resultante
+    //Impress√£o do conjunto resultante
     printf("%c - %c = ",lal,lel);
     imprimir(conjunto3,qnt3);
 }
@@ -208,7 +208,7 @@ void produto_cartesiano(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,
         printf("Vazio\n");
 
     else{
-        //Realiza a OperaÁ„o do produto cartesiano
+        //Realiza a Opera√ß√£o do produto cartesiano
         for(c1=0;c1<qnt1;c1++){
             for(c2=0;c2<qnt2;c2++){
                 if (c2==0 && c1==0)
@@ -224,12 +224,12 @@ void produto_cartesiano(int conjunto1[100],int conjunto2[100],int qnt1,int qnt2,
     }
 }
 int main(){
-    //FunÁ„o menu, atr·ves dela todas as operaÁoes s„o realizadas
-    setlocale(LC_ALL, "Portuguese");//Comando necessario para usar a acentuaÁ„o e caracteres especificos da lingua portuguesa
+    //Fun√ß√£o menu, atr√°ves dela todas as opera√ßoes s√£o realizadas
+    setlocale(LC_ALL, "Portuguese");//Comando necessario para usar a acentua√ß√£o e caracteres especificos da lingua portuguesa
     int conjunto1[100],conjunto2[100],conjunto3[100],qnt1=0,qnt2=0,qnt3=0,i1,i2,i3,o=0,ind,elementos;
     char r='S',p='N',batata='L',legume='T',nada;
 
-    //IntruduÁ„o dos conjuntos
+    //Intrudu√ß√£o dos conjuntos
     printf("\nA: ");
     imprimir(conjunto1,qnt1);
     printf("\n\nB: ");
@@ -239,30 +239,30 @@ int main(){
     printf("\n");
 
 
-    //Repetidor para continuar fazendo operaÁıes
+    //Repetidor para continuar fazendo opera√ß√µes
     while(r=='S' || r=='s'){
         printf("_______________________________________________________________\n");
-        printf("| CÛdigo |                     OperaÁ„o                        |\n");
+        printf("| C√≥digo |                     Opera√ß√£o                        |\n");
         printf("|--------|-----------------------------------------------------|\n");
         printf("|   01   |  Inserir um elemento em um conjunto                 |\n");
         printf("|   02   |  Remover um elemento de um conjunto                 |\n");
-        printf("|   03   |  Verificar se um elemento pertence ‡ um conjunto    |\n");
-        printf("|   04   |  Verificar se um conjunto È subconjunto de outro    |\n");
-        printf("|   05   |  Realizar a uni„o de dois conjuntos                 |\n");
-        printf("|   06   |  Realizar a interseÁ„o entre dois conjuntos         |\n");
-        printf("|   07   |  Realizar a diferÍnca entre dois conjuntos          |\n");
+        printf("|   03   |  Verificar se um elemento pertence √† um conjunto    |\n");
+        printf("|   04   |  Verificar se um conjunto √© subconjunto de outro    |\n");
+        printf("|   05   |  Realizar a uni√£o de dois conjuntos                 |\n");
+        printf("|   06   |  Realizar a interse√ß√£o entre dois conjuntos         |\n");
+        printf("|   07   |  Realizar a difer√™nca entre dois conjuntos          |\n");
         printf("|   08   |  Realizar o produto cartesiano entre dois conjuntos |\n");
         printf("|   09   |  Imprimir os elementos de um conjunto               |\n");
         printf("|   10   |  Sair                                               |\n");
         printf("|________|_____________________________________________________|\n\n");
 
-        printf("\nDigite o cÛdigo correspondente a operaÁ„o que deseja realizar: ");
+        printf("\nDigite o c√≥digo correspondente a opera√ß√£o que deseja realizar: ");
         scanf("%d",&o);
-        //Switch case para o menu de opÁıes
+        //Switch case para o menu de op√ß√µes
         switch(o){
         case(1):
             while((p!='A') && (p!='a') && (p!='B') && (p!='b') && (p!='C') && (p!='c')){
-                printf("\nCom qual dos conjuntos deseja realizar a operaÁ„o ? ");
+                printf("\nCom qual dos conjuntos deseja realizar a opera√ß√£o ? ");
                 scanf(" %c",&p);
                 printf("\n");
                 if (p=='A' || p=='a'){
@@ -274,7 +274,7 @@ int main(){
                         inserir(conjunto1,qnt1,'A');
                         qnt1=qnt1+1;
                     }
-                    //Impress„o do conjunto
+                    //Impress√£o do conjunto
                     printf("\nA = ");
                     imprimir(conjunto1,qnt1);
                 }
@@ -287,7 +287,7 @@ int main(){
                         inserir(conjunto2,qnt2,'B');
                         qnt2=qnt2+1;
                     }
-                    //Impress„o do conjunto
+                    //Impress√£o do conjunto
                     printf("\nB= ");
                     imprimir(conjunto2,qnt2);
                 }
@@ -300,17 +300,17 @@ int main(){
                         inserir(conjunto3,qnt3,'C');
                         qnt3=qnt3+1;
                     }
-                    //Impress„o do conjunto
+                    //Impress√£o do conjunto
                     printf("\nC = ");
                     imprimir(conjunto3,qnt3);
                 }
                 else
-                    printf("\nConjunto inv·lido!\n");
+                    printf("\nConjunto inv√°lido!\n");
             }
             break;
         case(2):
             while((p!='A') && (p!='a') && (p!='B') && (p!='b') && (p!='C') && (p!='c')){
-                printf("\nCom qual dos conjuntos deseja realizar a operaÁ„o ? ");
+                printf("\nCom qual dos conjuntos deseja realizar a opera√ß√£o ? ");
                 scanf(" %c",&p);
                 printf("\n");
                 if (p=='A' || p=='a'){
@@ -323,12 +323,12 @@ int main(){
                     qnt3=remover(conjunto3,qnt3,'C');
                 }
                 else
-                    printf("\nConjunto inv·lido!\n");
+                    printf("\nConjunto inv√°lido!\n");
             }
             break;
         case(3):
             while((p!='A') && (p!='a') && (p!='B') && (p!='b') && (p!='C') && (p!='c')){
-                printf("\nCom qual dos conjuntos deseja realizar a operaÁ„o ? ");
+                printf("\nCom qual dos conjuntos deseja realizar a opera√ß√£o ? ");
                 scanf(" %c",&p);
                 printf("\n");
                 if (p=='A' || p=='a')
@@ -338,11 +338,11 @@ int main(){
                 else if ((p=='C') || (p=='c'))
                     pertence(conjunto3,qnt3,'C');
                 else
-                    printf("\nConjunto inv·lido!\n");
+                    printf("\nConjunto inv√°lido!\n");
             }
             break;
         case(4):
-            printf("Digite a ordem na qual deseja fazer a operaÁ„o, ex: (A s B) :");
+            printf("Digite a ordem na qual deseja fazer a opera√ß√£o, ex: (A s B) :");
             scanf(" %c %c %c",&batata,&nada,&legume);
             printf("\n");
             if((batata=='C' || batata=='c') && (legume=='A' || legume=='a')){
@@ -364,11 +364,11 @@ int main(){
                 subconjunto(conjunto1,conjunto2,qnt1,qnt2,'A','B');
             }
             else{
-                printf("Conjuntos inv·lidos!\n");
+                printf("Conjuntos inv√°lidos!\n");
             }
             break;
         case(5):
-            printf("Digite a ordem na qual deseja fazer a operaÁ„o, ex: A U B :");
+            printf("Digite a ordem na qual deseja fazer a opera√ß√£o, ex: A U B :");
             scanf(" %c %c %c",&batata,&nada,&legume);
             printf("\n");
             if((batata=='C' || batata=='c') && (legume=='A' || legume=='a') || (batata=='A' || batata=='a') && (legume=='C' || legume=='c')){
@@ -381,11 +381,11 @@ int main(){
                 uniao(conjunto2,conjunto1,qnt2,qnt1,'B','A');
             }
             else{
-                printf("Conjuntos inv·lidos!\n");
+                printf("Conjuntos inv√°lidos!\n");
             }
             break;
         case(6):
-            printf("Digite a ordem na qual deseja fazer a operaÁ„o, ex: A n B :");
+            printf("Digite a ordem na qual deseja fazer a opera√ß√£o, ex: A n B :");
             scanf(" %c %c %c",&batata,&nada,&legume);
             printf("\n");
             if((batata=='C' || batata=='c') && (legume=='A' || legume=='a') || (batata=='A' || batata=='a') && (legume=='C' || legume=='c')){
@@ -398,11 +398,11 @@ int main(){
                 intersecao(conjunto2,conjunto1,qnt2,qnt1,'B','A');
             }
             else{
-                printf("Conjuntos inv·lidos!\n");
+                printf("Conjuntos inv√°lidos!\n");
             }
             break;
         case(7):
-            printf("Digite a ordem na qual deseja fazer a operaÁ„o, ex: A - B :");
+            printf("Digite a ordem na qual deseja fazer a opera√ß√£o, ex: A - B :");
             scanf(" %c %c %c",&batata,&nada,&legume);
             printf("\n");
             if((batata=='C' || batata=='c') && (legume=='A' || legume=='a')){
@@ -424,11 +424,11 @@ int main(){
                 subtracao(conjunto1,conjunto2,qnt1,qnt2,'A','B');
             }
             else{
-                printf("Conjuntos inv·lidos!\n");
+                printf("Conjuntos inv√°lidos!\n");
             }
             break;
         case(8):
-            printf("Digite a ordem na qual deseja fazer a operaÁ„o, ex: A x B :");
+            printf("Digite a ordem na qual deseja fazer a opera√ß√£o, ex: A x B :");
             scanf(" %c %c %c",&batata,&nada,&legume);
             printf("\n");
             if((batata=='C' || batata=='c') && (legume=='A' || legume=='a')){
@@ -450,7 +450,7 @@ int main(){
                 produto_cartesiano(conjunto1,conjunto2,qnt1,qnt2,'A','B');
             }
             else{
-                printf("Conjuntos inv·lidos!\n");
+                printf("Conjuntos inv√°lidos!\n");
             }
             break;
 
@@ -474,16 +474,16 @@ int main(){
                 printf("\n");
             }
             else{
-                printf("Conjunto Inv·lido!\n");
+                printf("Conjunto Inv√°lido!\n");
             }
             break;
         case(10):
             return 0;
         default:
-            printf("\nOperaÁ„o inv·lida!\n\n");
+            printf("\nOpera√ß√£o inv√°lida!\n\n");
             break;
         }
-        printf("\n\nDeseja realizar outra operaÁ„o ?(S/N): ");
+        printf("\n\nDeseja realizar outra opera√ß√£o ?(S/N): ");
         scanf(" %c",&r);
         if ((r=='S') || (r=='s')){
             system("cls");
